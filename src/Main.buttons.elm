@@ -12,6 +12,12 @@ main =
 type Msg
     = Increment
     | Decrement
+    | BigIncrement
+    | BigDecrement
+    | BiggerIncrement
+    | BiggerDecrement
+    | EvenBiggerIncrement
+    | EvenBiggerDecrement
 
 
 update msg model =
@@ -22,10 +28,34 @@ update msg model =
         Decrement ->
             model - 1
 
+        BigIncrement ->
+            model + 10
+
+        BigDecrement ->
+            model - 10
+
+        BiggerIncrement ->
+            model + 100
+
+        BiggerDecrement ->
+            model - 100
+
+        EvenBiggerIncrement ->
+            model + 1000
+
+        EvenBiggerDecrement ->
+            model - 1000
+
 
 view model =
     div []
-        [ button [ onClick Decrement ] [ text "-" ]
+        [ div [] [ button [ onClick EvenBiggerIncrement ] [ text "+1000" ] ]
+        , div [] [ button [ onClick BiggerIncrement ] [ text "+100" ] ]
+        , div [] [ button [ onClick BigIncrement ] [ text "+10" ] ]
+        , div [] [ button [ onClick Increment ] [ text "+" ] ]
         , div [] [ text (String.fromInt model) ]
-        , button [ onClick Increment ] [ text "+" ]
+        , div [] [ button [ onClick Decrement ] [ text "-" ] ]
+        , div [] [ button [ onClick BigDecrement ] [ text "-10" ] ]
+        , div [] [ button [ onClick BiggerDecrement ] [ text "-100" ] ]
+        , div [] [ button [ onClick EvenBiggerDecrement ] [ text "-1000" ] ]
         ]
