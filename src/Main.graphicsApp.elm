@@ -14,7 +14,8 @@ view =
     collage 500
         500
         [ defender
-            |> rotate (degrees -5)
+
+        --|> rotate (degrees -5)
         ]
 
 
@@ -25,18 +26,67 @@ main =
 defender =
     group
         [ defender_torso
+        , defender_right_arm
+        , defender_left_arm
         , defender_left_leg
         , defender_right_leg
         ]
 
 
+defender_upper_leg_end =
+    ( 0, -30 )
+
+
 defender_leg =
     group
-        [ line ( 0, 0 ) ( 0, -30 )
-            |> outlined (solid 2) black
-        , line ( 0, -30 ) ( -5, -60 )
-            |> outlined (solid 1.5) black
+        [ defender_upper_leg
+        , defender_lower_leg
+            |> move defender_upper_leg_end
         ]
+
+
+defender_upper_leg =
+    line ( 0, 0 ) defender_upper_leg_end
+        |> outlined (solid 2) black
+
+
+defender_lower_leg =
+    line ( 0, 0 ) ( -5, -30 )
+        |> outlined (solid 1.5) black
+
+
+defender_arm =
+    group
+        [ defender_upper_arm
+        , defender_lower_arm
+            |> move defender_upper_arm_end
+        ]
+
+
+defender_upper_arm_end =
+    ( -20, -15 )
+
+
+defender_upper_arm =
+    line ( 0, 0 ) defender_upper_arm_end
+        |> outlined (solid 1.5) black
+
+
+defender_lower_arm =
+    line ( 0, 0 ) ( -10, -15 )
+        |> outlined (solid 1.5) black
+
+
+defender_right_arm =
+    defender_arm
+        |> rotate (degrees -6)
+        |> move ( -52, 0 )
+
+
+defender_left_arm =
+    defender_arm
+        |> rotate (degrees 106)
+        |> move ( 50, 0 )
 
 
 defender_right_leg =
@@ -81,6 +131,22 @@ defender_torso =
         , circle 30
             |> outlined (solid 1) black
             |> move ( 0, 30 )
+        , ngon 8 29
+            |> outlined (solid 1) black
+            |> move ( 0, 30 )
+
+        --, ngon 6 27
+        --    |> outlined (solid 1) black
+        --    --|> rotate (degrees 18)
+        --    |> move ( 0, 30 )
+        --, ngon 5 23
+        --    |> outlined (solid 1) black
+        --    |> rotate (degrees 18)
+        --    |> move ( 0, 30 )
+        --, ngon 3 22
+        --    |> outlined (solid 1) black
+        --    |> rotate (degrees 6)
+        --    |> move ( 0, 30 )
         ]
 
 
