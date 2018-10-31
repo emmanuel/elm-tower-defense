@@ -100,11 +100,32 @@ numbers mean. Let's start with the functions that only take one argument:
 "it's size", which, in math, we typically describe in terms of its radius.
 So when we provide a `Float` when calling `circle`, that `Float` is used to
 define the radius of the resulting circle. In the case of `square` and
-`triangle`, the `Float` we provide is used to define the length of a side. 
+`triangle`, the `Float` we provide is used to define the length of a side;
+one number is sufficient to define a square or triangle, because squares and
+triangles _by definition_ have sides of the same length (one number!). So
+the mathematical definition of the shape is our big(gest) clue about to use
+the function of the same name. 
+
+Now, I left something out of the description above: not **all** triangles
+have equal side lengths; _equilateral_ triangles do. So we can infer that
+the `triangle` function is going to give us an _equilateral_ triangle; we
+know this because other kinds of triangles can't be defined with a single
+number ("need more input. does not compute."). And we've got one more clue:
+there are other kinds of triangle functions in the list. The second kind of
+triangle (after equilateral) is _isoceles_, which is a triangle where two
+sides have the same length. The `isoceles` function takes two `Float`s:
+first `Float` is the length of the two same-length sides, and second `Float`
+is the length of the 'other' side. The second kind of triangle is a _right
+triangle_, which can be described in terms of the lengths of its two legs.
+And based on that description, you can see that `rightTriangle` needs two
+`Float`s, which define the lengths of its sides. There are other ways you
+could define a _right triangle_ (e.g., you could define it by its angles),
+so it's only by reading the documentation (and trying it out!) that I know
+how these numbers are used to define shapes.
 
 Now, I know that `circle`'s `Float` is a radius, and `square`'s `Float` is a
 side length because I've read the documentation[1], and used them in a
-program. But (usually) I *don't remember* them. Instead, when I see the
+program. But (usually) I _don't remember_ them. Instead, when I see the
 function signature I go through the thought process I described above: I
 consider "what could this `Float` mean?", and (often) I can quickly figure
 it out based on how the shape is defined (i.e., in math, a circle is defined
