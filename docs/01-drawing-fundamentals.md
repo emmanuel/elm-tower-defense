@@ -37,21 +37,23 @@ They are listed by name in the section above. Lower down, spread out in the
 code, you will find the type signatures for all of these functions. Here
 they are, collected together:
 
-* `line : ( Float, Float ) -> ( Float, Float ) -> Stencil`
-* `polygon : List ( Float, Float ) -> Stencil`
-* `openPolygon : List ( Float, Float ) -> Stencil`
-* `ngon : Int -> Float -> Stencil`
-* `triangle : Float -> Stencil`
-* `rightTriangle : Float -> Float -> Stencil`
-* `isosceles : Float -> Float -> Stencil`
-* `sideAngleSide : Float -> Float -> Float -> Stencil`
-* `square : Float -> Stencil`
-* `rect : Float -> Float -> Stencil`
-* `rectangle : Float -> Float -> Stencil`
-* `roundedRect : Float -> Float -> Float -> Stencil`
-* `circle : Float -> Stencil`
-* `oval : Float -> Float -> Stencil`
-* `wedge : Float -> Float -> Stencil`
+```elm
+line : ( Float, Float ) -> ( Float, Float ) -> Stencil
+polygon : List ( Float, Float ) -> Stencil
+openPolygon : List ( Float, Float ) -> Stencil
+ngon : Int -> Float -> Stencil
+triangle : Float -> Stencil
+rightTriangle : Float -> Float -> Stencil
+isosceles : Float -> Float -> Stencil
+sideAngleSide : Float -> Float -> Float -> Stencil
+square : Float -> Stencil
+rect : Float -> Float -> Stencil
+rectangle : Float -> Float -> Stencil
+roundedRect : Float -> Float -> Float -> Stencil
+circle : Float -> Stencil
+oval : Float -> Float -> Stencil
+wedge : Float -> Float -> Stencil
+```
 
 *sigh*. That's still pretty dense. Let's break that down. First, you may want
 to read about [how to read type
@@ -61,21 +63,23 @@ simplification is to notice that all of the signatures end with `-> Stencil`,
 which tells us that all of these functions return something that is of the
 `Stencil` type. Here's what the list looks like without the `-> Stencil` part:
 
-* `circle        : Float`
-* `square        : Float`
-* `triangle      : Float`
-* `isosceles     : Float -> Float`
-* `oval          : Float -> Float`
-* `rect          : Float -> Float`
-* `rectangle     : Float -> Float`
-* `rightTriangle : Float -> Float`
-* `wedge         : Float -> Float`
-* `sideAngleSide : Float -> Float -> Float`
-* `roundedRect   : Float -> Float -> Float`
-* `line          : ( Float, Float ) -> ( Float, Float )`
-* `polygon       : List ( Float, Float )`
-* `openPolygon   : List ( Float, Float )`
-* `ngon          : Int -> Float`
+```elm
+circle        : Float
+square        : Float
+triangle      : Float
+isosceles     : Float -> Float
+oval          : Float -> Float
+rect          : Float -> Float
+rectangle     : Float -> Float
+rightTriangle : Float -> Float
+wedge         : Float -> Float
+sideAngleSide : Float -> Float -> Float
+roundedRect   : Float -> Float -> Float
+line          : ( Float, Float ) -> ( Float, Float )
+polygon       : List ( Float, Float )
+openPolygon   : List ( Float, Float )
+ngon          : Int -> Float
+```
 
 I also took the liberty of lining things up and reordering. Hopefully that
 makes this a bit more readable. At this point, everything on the right-hand
