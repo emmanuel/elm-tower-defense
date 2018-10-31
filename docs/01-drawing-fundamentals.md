@@ -85,8 +85,7 @@ I also took the liberty of lining things up and reordering. Hopefully that
 makes this a bit more readable. At this point, everything on the right-hand
 side of the colon describes the arguments that we have to supply in order to
 call (aka "use", "invoke") this function. And they're ordered based on how
-many arguments the function requires (this is called it's "arity". As in,
-"the function `circle` has arity one.").
+many arguments the function requires.
 
 **IMPORTANT**: none of these function signatures tell us what the argument(s)
 _mean_. In other words, `circle : Float -> Stencil` tells us that we need to
