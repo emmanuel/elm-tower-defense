@@ -112,16 +112,19 @@ the `triangle` function is going to give us an _equilateral_ triangle; we
 know this because other kinds of triangles can't be defined with a single
 number ("need more input. does not compute."). And we've got one more clue:
 there are other kinds of triangle functions in the list. The second kind of
-triangle (after equilateral) is _isoceles_, which is a triangle where two
-sides have the same length. The `isoceles` function takes two `Float`s:
-first `Float` is the length of the two same-length sides, and second `Float`
-is the length of the 'other' side. The second kind of triangle is a _right
-triangle_, which can be described in terms of the lengths of its two legs.
-And based on that description, you can see that `rightTriangle` needs two
-`Float`s, which define the lengths of its sides. There are other ways you
-could define a _right triangle_ (e.g., you could define it by its angles),
-so it's only by reading the documentation (and trying it out!) that I know
-how these numbers are used to define shapes.
+triangle (after equilateral) is _isosceles_, which is [a triangle where two
+sides have the same
+length](https://en.wikipedia.org/wiki/Isosceles_triangle). The `isosceles`
+function takes two `Float`s: first `Float` is the length of the two
+same-length sides, and second `Float` is the length of the 'other' side. The
+second kind of triangle is a [_right
+triangle_](https://en.wikipedia.org/wiki/Right_triangle), which can be
+described in terms of the lengths of its two legs. And based on that
+description, you can see that `rightTriangle` needs two `Float`s, which
+define the lengths of its sides. There are other ways you could define a
+_right triangle_ (e.g., you could define it by its angles), so it's only by
+reading the documentation (and trying it out!) that I know how these numbers
+are used to define shapes.
 
 Now, I know that `circle`'s `Float` is a radius, and `square`'s `Float` is a
 side length because I've read the documentation[1], and used them in a
