@@ -4,8 +4,11 @@ First, there ought (eventually, perhaps aspirationally) to be multiple pathways
 for entering into this story. At the moment, there is but this first one: the
 nerd-core brain-crushing skull-bender path. Buckle up.
 
-If you look in the source code of the library we're using for drawing [you
-will find](https://github.com/MacCASOutreach/graphicsvg/blob/b737953a36d94874721573eed27bc21c67116836/src/GraphicSVG.elm):
+If you look in the [source
+code](https://github.com/MacCASOutreach/graphicsvg/tree/elm-nineteen) of the
+[library we're using for
+drawing](https://package.elm-lang.org/packages/MacCASOutreach/graphicsvg/latest/GraphicSVG)
+[you will find](https://github.com/MacCASOutreach/graphicsvg/blob/b737953a36d94874721573eed27bc21c67116836/src/GraphicSVG.elm#L1-L18):
 
 ```elm
 module GraphicSVG exposing
