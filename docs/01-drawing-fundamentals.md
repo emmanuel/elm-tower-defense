@@ -87,10 +87,11 @@ side of the colon describes the arguments that we have to supply in order to
 call (aka "use", "invoke") this function. And they're ordered based on how
 many arguments the function requires.
 
-**IMPORTANT**: none of these function signatures tell us what the argument(s)
-_mean_. In other words, `circle : Float -> Stencil` tells us that we need to
-give a `Float` and we'll get a `Stencil`, but it doesn't explain what the
-`Float` is for, as in how it is used to define the shape. 
+**IMPORTANT**: none of these function signatures tell us what the
+argument(s) _mean_. In other words, `circle : Float -> Stencil` tells us
+that, in order to use the `circle` function, we need to give a `Float` and
+we'll get a `Stencil`, but it doesn't explain what the `Float` is for, as in
+how it is used to define the shape.
 
 But with a little bit of reflection, I think we can figure out what the
 numbers mean. Let's start with the functions that only take one argument:
