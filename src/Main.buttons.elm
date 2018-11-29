@@ -6,11 +6,12 @@ import Html.Events exposing (onClick)
 
 
 main =
-    Browser.sandbox { init = 0, update = update, view = view }
+    Browser.sandbox { init = init, update = update, view = view }
 
 
 type Msg
-    = Increment
+    = Reset
+    | Increment
     | Decrement
     | BigIncrement
     | BigDecrement
@@ -20,31 +21,43 @@ type Msg
     | EvenBiggerDecrement
 
 
+type alias Model =
+    { counter : Int }
+
+
+init : Model
+init =
+    { counter = 0 }
+
+
 update msg model =
     case msg of
+        Reset ->
+            { model | counter = 0 }
+
         Increment ->
-            model + 1
+            { model | counter = model.counter + 1 }
 
         Decrement ->
-            model - 1
+            { model | counter = model.counter - 1 }
 
         BigIncrement ->
-            model + 10
+            { model | counter = model.counter + 10 }
 
         BigDecrement ->
-            model - 10
+            { model | counter = model.counter - 10 }
 
         BiggerIncrement ->
-            model + 100
+            { model | counter = model.counter + 100 }
 
         BiggerDecrement ->
-            model - 100
+            { model | counter = model.counter - 100 }
 
         EvenBiggerIncrement ->
-            model + 1000
+            { model | counter = model.counter + 1000 }
 
         EvenBiggerDecrement ->
-            model - 1000
+            { model | counter = model.counter - 1000 }
 
 
 view model =
@@ -53,7 +66,10 @@ view model =
         , div [] [ button [ onClick BiggerIncrement ] [ text "+100" ] ]
         , div [] [ button [ onClick BigIncrement ] [ text "+10" ] ]
         , div [] [ button [ onClick Increment ] [ text "+" ] ]
-        , div [] [ text (String.fromInt model) ]
+        , div []
+            [ text (String.fromInt model.counter)
+            , button [ onClick Reset ] [ text "Reset" ]
+            ]
         , div [] [ button [ onClick Decrement ] [ text "-" ] ]
         , div [] [ button [ onClick BigDecrement ] [ text "-10" ] ]
         , div [] [ button [ onClick BiggerDecrement ] [ text "-100" ] ]
